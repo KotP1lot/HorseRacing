@@ -44,7 +44,10 @@ public class Horse : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        var raceController = RaceController.Instance;
+        if (raceController.HasTrackedHorse) return;
+
         _animator.SetTrigger("Rar");
-        RaceController.Instance.SetTrackHorse(this);
+        raceController.SetTrackHorse(this);
     }
 }

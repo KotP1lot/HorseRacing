@@ -13,12 +13,13 @@ public class RaceController : MonoBehaviour
 
     [SerializeField] List<Transform> _podiumPositions;
     private Horse _trackedHorse;
+    public bool HasTrackedHorse => _trackedHorse != null;
     private List<Horse> _queueFinish = new();
     private void Awake()
     {
         Instance = this;
     }
-
+    
     public void SetTrackHorse(Horse horse)
     {
         if (_trackedHorse != null) return;
